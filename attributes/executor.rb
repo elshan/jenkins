@@ -35,6 +35,11 @@ default['jenkins']['executor'].tap do |executor|
   executor['private_key'] = nil
 
   #
+  # The groups of user under which Jenkins is running. Works for runit only.
+  #
+  executor['runit']['groups'] = ['jenkins']
+
+  #
   # If you need to pass through a proxy to communicate between your masters and
   # slaves, you will need to set this node attribute. It should be  set in the
   # form `HOST:PORT`:
